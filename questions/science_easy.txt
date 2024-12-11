@@ -1,0 +1,98 @@
+question = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the boiling point of water?",
+            correct_answer="100°C"
+        )
+        question.set_wrong_answers(["90°C", "110°C", "120°C"])
+        db.session.add(question)
+
+        question1 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What planet is known as the Red Planet?",
+            correct_answer="Mars"
+        )
+        question1.set_wrong_answers(["Venus", "Jupiter", "Saturn"])
+        db.session.add(question1)
+
+        question2 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What gas do plants absorb from the atmosphere?",
+            correct_answer="Carbon dioxide"
+        )
+        question2.set_wrong_answers(["Oxygen", "Nitrogen", "Hydrogen"])
+        db.session.add(question2)
+
+        question3 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the chemical symbol for water?",
+            correct_answer="H2O"
+        )
+        question3.set_wrong_answers(["O2", "CO2", "NaCl"])
+        db.session.add(question3)
+
+        question4 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the center of an atom called?",
+            correct_answer="Nucleus"
+        )
+        question4.set_wrong_answers(["Electron", "Proton", "Neutron"])
+        db.session.add(question4)
+
+        question5 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the force that keeps objects on the ground?",
+            correct_answer="Gravity"
+        )
+        question5.set_wrong_answers(["Magnetism", "Friction", "Inertia"])
+        db.session.add(question5)
+
+        question6 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the largest organ in the human body?",
+            correct_answer="Skin"
+        )
+        question6.set_wrong_answers(["Liver", "Heart", "Brain"])
+        db.session.add(question6)
+
+        question7 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="How many planets are in the Solar System?",
+            correct_answer="8"
+        )
+        question7.set_wrong_answers(["7", "9", "10"])
+        db.session.add(question7)
+
+        question8 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the process by which plants make their own food?",
+            correct_answer="Photosynthesis"
+        )
+        question8.set_wrong_answers(["Respiration", "Digestion", "Transpiration"])
+        db.session.add(question8)
+
+        question9 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What is the main gas found in the air we breathe?",
+            correct_answer="Nitrogen"
+        )
+        question9.set_wrong_answers(["Oxygen", "Carbon dioxide", "Helium"])
+        db.session.add(question9)
+
+        question10 = Questions(
+            category="Science",
+            difficulty="Easy",
+            question_text="What part of the body pumps blood?",
+            correct_answer="Heart"
+        )
+        question10.set_wrong_answers(["Lungs", "Brain", "Kidneys"])
+        db.session.add(question10)

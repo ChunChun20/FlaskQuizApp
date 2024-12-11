@@ -1,0 +1,87 @@
+question = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the name of the process in which unstable atomic nuclei lose energy by emitting radiation?",
+            correct_answer="Radioactive Decay"
+        )
+        question.set_wrong_answers(["Fission", "Fusion", "Ionization"])
+
+        question1 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="Which scientist is credited with formulating the laws of planetary motion?",
+            correct_answer="Johannes Kepler"
+        )
+        question1.set_wrong_answers(["Galileo Galilei", "Isaac Newton", "Nicolaus Copernicus"])
+
+        question2 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the term for the amount of disorder or randomness in a system?",
+            correct_answer="Entropy"
+        )
+        question2.set_wrong_answers(["Enthalpy", "Equilibrium", "Energy Gradient"])
+
+        question3 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What type of chemical reaction absorbs energy from its surroundings?",
+            correct_answer="Endothermic Reaction"
+        )
+        question3.set_wrong_answers(["Exothermic Reaction", "Combustion Reaction", "Neutralization Reaction"])
+
+        question4 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What subatomic particle is responsible for the strong nuclear force?",
+            correct_answer="Gluon"
+        )
+        question4.set_wrong_answers(["Photon", "Electron", "Proton"])
+
+        question5 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="Which layer of the Earth's atmosphere contains the ozone layer?",
+            correct_answer="Stratosphere"
+        )
+        question5.set_wrong_answers(["Troposphere", "Mesosphere", "Thermosphere"])
+
+        question6 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the term for the change of state directly from solid to gas without passing through the liquid phase?",
+            correct_answer="Sublimation"
+        )
+        question6.set_wrong_answers(["Deposition", "Condensation", "Evaporation"])
+
+        question7 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the name of the largest moon of Saturn?",
+            correct_answer="Titan"
+        )
+        question7.set_wrong_answers(["Europa", "Ganymede", "Callisto"])
+
+        question8 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the name of the protein that carries oxygen in the blood?",
+            correct_answer="Hemoglobin"
+        )
+        question8.set_wrong_answers(["Myoglobin", "Albumin", "Fibrinogen"])
+
+        question9 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What is the value of Avogadro's number?",
+            correct_answer="6.022 x 10^23"
+        )
+        question9.set_wrong_answers(["6.022 x 10^22", "6.022 x 10^24", "6.022 x 10^21"])
+
+        question10 = Questions(
+            category="Science",
+            difficulty="Hard",
+            question_text="What type of electromagnetic radiation has the shortest wavelength?",
+            correct_answer="Gamma Rays"
+        )
+        question10.set_wrong_answers(["X-rays", "Ultraviolet", "Microwaves"])

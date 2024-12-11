@@ -1,0 +1,129 @@
+questions - normal
+
+question = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the most abundant element in the Earth's crust?",
+            correct_answer="Oxygen"
+        )
+        question.set_wrong_answers(["Silicon", "Hydrogen", "Aluminum"])
+
+        question1 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="Which particle in an atom has no electric charge?",
+            correct_answer="Neutron"
+        )
+        question1.set_wrong_answers(["Proton", "Electron", "Quark"])
+
+
+        question2 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What organ in the human body is responsible for filtering blood?",
+            correct_answer="Kidney"
+        )
+        question2.set_wrong_answers(["Liver", "Heart", "Lungs"])
+
+
+        question3 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="Which planet has the largest number of moons?",
+            correct_answer="Saturn"
+        )
+        question3.set_wrong_answers(["Jupiter", "Uranus", "Neptune"])
+
+
+        question4 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the term for a species that no longer exists?",
+            correct_answer="Extinct"
+        )
+        question4.set_wrong_answers(["Endangered", "Evolved", "Obsolete"])
+
+
+        question5 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the unit of electrical resistance?",
+            correct_answer="Ohm"
+        )
+        question5.set_wrong_answers(["Ampere", "Volt", "Watt"])
+
+
+        question6 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What type of energy is produced by moving objects?",
+            correct_answer="Kinetic Energy"
+        )
+        question6.set_wrong_answers(["Potential Energy", "Thermal Energy", "Electrical Energy"])
+
+
+        question7 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the chemical formula for table salt?",
+            correct_answer="NaCl"
+        )
+        question7.set_wrong_answers(["KCl", "Na2O", "MgCl2"])
+
+
+        question8 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the name of the force that opposes motion between two surfaces in contact?",
+            correct_answer="Friction"
+        )
+        question8.set_wrong_answers(["Gravity", "Tension", "Centripetal force"])
+
+
+        question9 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the pH of a neutral solution at 25°C?",
+            correct_answer="7"
+        )
+        question9.set_wrong_answers(["5", "9", "0"])
+
+
+        question10 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="Which type of bond involves the sharing of electron pairs between atoms?",
+            correct_answer="Covalent Bond"
+        )
+        question10.set_wrong_answers(["Ionic Bond", "Hydrogen Bond", "Metallic Bond"])
+
+
+        question11 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the SI unit of force?",
+            correct_answer="Newton"
+        )
+        question11.set_wrong_answers(["Joule", "Pascal", "Watt"])
+
+
+        question12 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What is the main energy source driving Earth's weather systems?",
+            correct_answer="The Sun"
+        )
+        question12.set_wrong_answers(["Volcanoes", "Earth's Core", "The Moon"])
+
+
+        question13 = Questions(
+            category="Science",
+            difficulty="Normal",
+            question_text="What type of macromolecule are enzymes?",
+            correct_answer="Proteins"
+        )
+        question13.set_wrong_answers(["Carbohydrates", "Lipids", "Nucleic Acids"])
+
+        db.session.add(question)
+
+        db.session.commit()

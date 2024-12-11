@@ -1,0 +1,98 @@
+question1 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What does 'HTTP' stand for?",
+    correct_answer="HyperText Transfer Protocol"
+)
+question1.set_wrong_answers(["HyperText Transmission Protocol", "HyperTransfer Text Protocol", "HighTech Transfer Protocol"])
+db.session.add(question1)
+
+question2 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What is the name of the virtual assistant developed by Apple?",
+    correct_answer="Siri"
+)
+question2.set_wrong_answers(["Alexa", "Cortana", "Google Assistant"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="Which company developed the Windows operating system?",
+    correct_answer="Microsoft"
+)
+question3.set_wrong_answers(["Apple", "Google", "IBM"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What is the term for a computer’s temporary storage area?",
+    correct_answer="RAM (Random Access Memory)"
+)
+question4.set_wrong_answers(["Hard Drive", "Cache", "ROM"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="Which device is used to measure temperature?",
+    correct_answer="Thermometer"
+)
+question5.set_wrong_answers(["Barometer", "Hygrometer", "Odometer"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What does 'Wi-Fi' stand for?",
+    correct_answer="Wireless Fidelity"
+)
+question6.set_wrong_answers(["Wide Fidelity", "Wireless Internet", "Wide Frequency"])
+db.session.add(question6)
+
+question7 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What does the acronym 'USB' stand for?",
+    correct_answer="Universal Serial Bus"
+)
+question7.set_wrong_answers(["Universal Service Bus", "United Service Bus", "Universal Signal Bus"])
+db.session.add(question7)
+
+question8 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What is the main purpose of a web browser?",
+    correct_answer="To access websites"
+)
+question8.set_wrong_answers(["To play games", "To create websites", "To send emails"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What programming language is primarily used for web development on the front end?",
+    correct_answer="JavaScript"
+)
+question9.set_wrong_answers(["Python", "C++", "Java"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What company created the iPhone?",
+    correct_answer="Apple"
+)
+question10.set_wrong_answers(["Samsung", "Nokia", "Huawei"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="Technology",
+    difficulty="Easy",
+    question_text="What is the name of the search engine created by Google?",
+    correct_answer="Google Search"
+)
+question11.set_wrong_answers(["Yahoo", "Bing", "DuckDuckGo"])
+db.session.add(question11)

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Scoreboard{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert alert-{{ messages[0][0] }} alert-dismissible fade show" role="alert">
+                        {{ messages[0][1] }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+
+<nav class="navbar navbar-light">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <a href="{{ url_for('menu') }}" class="btn btn-success bangers-button logout-button">
+                Menu
+            </a>
+
+
+        <div class="d-flex align-items-center">
+            <span class="navbar-text me-3 bangers">
+                {{ current_user.username }}
+            </span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger bangers-button logout-button">
+                Logout
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="scoreboard">
+ <h1 style="text-align: center;" class="quiz-title" >Top 10 Scores</h1>
+     <form method="POST" action="{{ url_for('scoreboard') }}" class="form-inline text-center mb-3">
+        {{ form.hidden_tag() }}
+        {{ form.category.label(class="bangers") }} {{ form.category(class="form-select d-inline-block w-auto mx-2 bangers") }}
+        {{ form.difficulty.label(class="bangers") }} {{ form.difficulty(class="form-select d-inline-block w-auto mx-2 bangers") }}
+        {{ form.submit(class="btn btn-primary bangers-button logout-button") }}
+    </form>
+     <table>
+         <thead>
+             <tr>
+                 <th>Rank</th>
+                 <th>Username</th>
+                 <th>Score</th>
+                 <th>Category</th>
+                 <th>Difficulty</th>
+                 <th>Date</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for rank, score in enumerate(scores, start=1) %}
+             <tr>
+                 <td>{{ rank }}</td>
+                 <td>{{ score.username }}</td>
+                 <td>{{ score.score }}</td>
+                 <td>{{ score.category }}</td>
+                 <td>{{ score.difficulty }}</td>
+                 <td>{{ score.date.strftime('%Y-%m-%d') }}</td>
+             </tr>
+            {% endfor %}
+         </tbody>
+     </table>
+</div>
+
+{% endblock %}

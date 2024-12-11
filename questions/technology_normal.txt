@@ -1,0 +1,98 @@
+question1 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What was the first commercially successful video game?",
+    correct_answer="Pong"
+)
+question1.set_wrong_answers(["Space Invaders", "Pac-Man", "Donkey Kong"])
+db.session.add(question1)
+
+question2 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What year was the first iPhone released?",
+    correct_answer="2007"
+)
+question2.set_wrong_answers(["2005", "2009", "2010"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="Who is credited with inventing the World Wide Web?",
+    correct_answer="Tim Berners-Lee"
+)
+question3.set_wrong_answers(["Bill Gates", "Mark Zuckerberg", "Vint Cerf"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What does the acronym 'CPU' stand for in computing?",
+    correct_answer="Central Processing Unit"
+)
+question4.set_wrong_answers(["Central Program Unit", "Central Processor Unit", "Computer Processing Unit"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="Which company developed the Android operating system?",
+    correct_answer="Google"
+)
+question5.set_wrong_answers(["Apple", "Microsoft", "IBM"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What programming language was originally developed by James Gosling at Sun Microsystems in 1995?",
+    correct_answer="Java"
+)
+question6.set_wrong_answers(["C", "Python", "Ruby"])
+db.session.add(question6)
+
+question7 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="Which company acquired the social media platform Instagram in 2012?",
+    correct_answer="Facebook"
+)
+question7.set_wrong_answers(["Google", "Microsoft", "Twitter"])
+db.session.add(question7)
+
+question8 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What is the main function of an operating system?",
+    correct_answer="To manage hardware and software resources"
+)
+question8.set_wrong_answers(["To store data", "To browse the web", "To create applications"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="Which video streaming service was founded by Reed Hastings and Marc Randolph in 1997?",
+    correct_answer="Netflix"
+)
+question9.set_wrong_answers(["Hulu", "Amazon Prime Video", "YouTube"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What is the most commonly used programming language for iOS app development?",
+    correct_answer="Swift"
+)
+question10.set_wrong_answers(["Java", "C++", "Python"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="Technology",
+    difficulty="Normal",
+    question_text="What does the acronym 'URL' stand for?",
+    correct_answer="Uniform Resource Locator"
+)
+question11.set_wrong_answers(["Universal Resource Locator", "Uniform Reference Locator", "Universal Resource Link"])
+db.session.add(question11)

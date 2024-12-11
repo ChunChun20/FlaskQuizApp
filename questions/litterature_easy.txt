@@ -1,0 +1,98 @@
+question1 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="Who wrote the play 'Romeo and Juliet'?",
+    correct_answer="William Shakespeare"
+)
+question1.set_wrong_answers(["Charles Dickens", "Jane Austen", "George Orwell"])
+db.session.add(question1)
+
+question2 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="What is the title of the first book in the 'Harry Potter' series?",
+    correct_answer="Harry Potter and the Sorcerer's Stone"
+)
+question2.set_wrong_answers(["Harry Potter and the Chamber of Secrets", "Harry Potter and the Prisoner of Azkaban", "Harry Potter and the Goblet of Fire"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="Who wrote the novel 'Pride and Prejudice'?",
+    correct_answer="Jane Austen"
+)
+question3.set_wrong_answers(["Charlotte Brontë", "Emily Brontë", "Mary Shelley"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="What kind of animal is the protagonist of the book 'Charlotte's Web'?",
+    correct_answer="Pig"
+)
+question4.set_wrong_answers(["Spider", "Horse", "Dog"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="In which book does the character 'Gollum' appear?",
+    correct_answer="The Lord of the Rings"
+)
+question5.set_wrong_answers(["The Hobbit", "Harry Potter", "Narnia"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="Who wrote 'Moby-Dick'?",
+    correct_answer="Herman Melville"
+)
+question6.set_wrong_answers(["Mark Twain", "Nathaniel Hawthorne", "Charles Dickens"])
+db.session.add(question6)
+
+question7 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="What is the title of the famous 1939 novel by John Steinbeck about migrant workers?",
+    correct_answer="The Grapes of Wrath"
+)
+question7.set_wrong_answers(["Of Mice and Men", "East of Eden", "The Pearl"])
+db.session.add(question7)
+
+question8 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="Which book is the best-selling novel of all time?",
+    correct_answer="Don Quixote"
+)
+question8.set_wrong_answers(["War and Peace", "Pride and Prejudice", "The Great Gatsby"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="Who wrote 'The Great Gatsby'?",
+    correct_answer="F. Scott Fitzgerald"
+)
+question9.set_wrong_answers(["Ernest Hemingway", "John Steinbeck", "Mark Twain"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="In the book 'The Chronicles of Narnia,' what is the name of the lion?",
+    correct_answer="Aslan"
+)
+question10.set_wrong_answers(["Simba", "Mufasa", "Nala"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="Literature",
+    difficulty="Easy",
+    question_text="In what fictional town does 'To Kill a Mockingbird' take place?",
+    correct_answer="Maycomb"
+)
+question11.set_wrong_answers(["Salem", "Gotham", "Hogwarts"])
+db.session.add(question11)

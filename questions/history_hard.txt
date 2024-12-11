@@ -1,0 +1,110 @@
+question1 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="What was the primary purpose of the Congress of Vienna in 1815?",
+    correct_answer="To restore the balance of power in Europe after the Napoleonic Wars"
+)
+question1.set_wrong_answers([
+    "To establish a unified European government",
+    "To create a trade alliance between European nations",
+    "To end the Hundred Years' War"
+])
+db.session.add(question1)
+
+question2 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Who was the first ruler of the unified German Empire in 1871?",
+    correct_answer="Wilhelm I"
+)
+question2.set_wrong_answers(["Otto von Bismarck", "Frederick the Great", "Wilhelm II"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Which dynasty ruled China during the construction of the majority of the Great Wall?",
+    correct_answer="Ming Dynasty"
+)
+question3.set_wrong_answers(["Qing Dynasty", "Tang Dynasty", "Han Dynasty"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="What empire did Mansa Musa rule during his reign?",
+    correct_answer="Mali Empire"
+)
+question4.set_wrong_answers(["Songhai Empire", "Ghana Empire", "Ethiopian Empire"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Who led the Haitian Revolution and became the first leader of independent Haiti?",
+    correct_answer="Toussaint Louverture"
+)
+question5.set_wrong_answers(["Jean-Jacques Dessalines", "Henri Christophe", "Simón Bolívar"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="What was the name of the agreement that officially ended the Thirty Years' War in 1648?",
+    correct_answer="Treaty of Westphalia"
+)
+question6.set_wrong_answers([
+    "Treaty of Utrecht",
+    "Treaty of Ghent",
+    "Treaty of Tordesillas"
+])
+db.session.add(question6)
+
+question7 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Which historical event is associated with the year 1215?",
+    correct_answer="Signing of the Magna Carta"
+)
+question7.set_wrong_answers([
+    "Start of the Crusades",
+    "Fall of Constantinople",
+    "Discovery of America"
+])
+db.session.add(question7)
+
+question8 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Who was the longest-reigning monarch in French history?",
+    correct_answer="Louis XIV"
+)
+question8.set_wrong_answers(["Louis XVI", "Napoleon Bonaparte", "Henry IV"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="Which city served as the capital of the Byzantine Empire?",
+    correct_answer="Constantinople"
+)
+question9.set_wrong_answers(["Rome", "Athens", "Alexandria"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="What was the name of the Islamic caliphate that ruled much of the Middle East during the 8th to 13th centuries?",
+    correct_answer="Abbasid Caliphate"
+)
+question10.set_wrong_answers(["Umayyad Caliphate", "Ottoman Empire", "Seljuk Empire"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="History",
+    difficulty="Hard",
+    question_text="What was the primary written language of the ancient Mesopotamian civilization?",
+    correct_answer="Cuneiform"
+)
+question11.set_wrong_answers(["Hieroglyphs", "Sanskrit", "Latin"])
+db.session.add(question11)

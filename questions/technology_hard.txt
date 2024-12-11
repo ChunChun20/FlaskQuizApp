@@ -1,0 +1,102 @@
+question1 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the name of the first artificial satellite launched into space?",
+    correct_answer="Sputnik 1"
+)
+question1.set_wrong_answers(["Vanguard 1", "Explorer 1", "Luna 1"])
+db.session.add(question1)
+
+question2 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="Which computer scientist is considered the father of the modern computer?",
+    correct_answer="Alan Turing"
+)
+question2.set_wrong_answers(["Charles Babbage", "John von Neumann", "Claude Shannon"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="Which protocol is used to send emails over the internet?",
+    correct_answer="SMTP (Simple Mail Transfer Protocol)"
+)
+question3.set_wrong_answers(["HTTP", "FTP", "IMAP"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What year was the first IBM personal computer (PC) introduced?",
+    correct_answer="1981"
+)
+question4.set_wrong_answers(["1979", "1983", "1985"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the name of the process of converting an analog signal to a digital one?",
+    correct_answer="Analog-to-digital conversion (ADC)"
+)
+question5.set_wrong_answers(["Digital-to-analog conversion", "Signal modulation", "Compression"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the primary purpose of the blockchain technology?",
+    correct_answer="To securely record and verify transactions in a decentralized manner"
+)
+question6.set_wrong_answers([
+    "To track real-time stock prices",
+    "To store large data files",
+    "To provide online payment services"
+])
+db.session.add(question6)
+
+question7 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What was the name of the first computer virus that spread in the wild?",
+    correct_answer="Creeper virus"
+)
+question7.set_wrong_answers(["ILOVEYOU", "Melissa", "MyDoom"])
+db.session.add(question7)
+
+question8 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the name of the machine learning algorithm that simulates a biological neural network?",
+    correct_answer="Artificial Neural Network (ANN)"
+)
+question8.set_wrong_answers(["Decision Trees", "Support Vector Machines", "Random Forests"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the largest known supercomputer as of 2023?",
+    correct_answer="Frontier"
+)
+question9.set_wrong_answers(["Fugaku", "Summit", "Titan"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="Which company developed the first commercially available graphical user interface (GUI) in the 1980s?",
+    correct_answer="Xerox"
+)
+question10.set_wrong_answers(["Microsoft", "Apple", "IBM"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="Technology",
+    difficulty="Hard",
+    question_text="What is the primary function of the 'kernel' in an operating system?",
+    correct_answer="To manage system resources and communication between hardware and software"
+)
+question11.set_wrong_answers(["To handle user interfaces", "To compile programs", "To store user data"])
+db.session.add(question11)

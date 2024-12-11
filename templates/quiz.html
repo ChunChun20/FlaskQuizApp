@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% block title %}Quiz{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert alert-{{ messages[0][0] }} alert-dismissible fade show" role="alert">
+                        {{ messages[0][1] }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+
+<nav class="navbar navbar-light">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <span class="navbar-text bangers-nav" id="score">
+            Score: 0
+        </span>
+
+
+        <div class="d-flex align-items-center">
+            <span class="navbar-text me-3 bangers-nav">
+                {{ current_user.username }}
+            </span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger bangers-button logout-button">
+                Logout
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div>
+<h3 class="quiz-title">{{ message }}</h3>
+</div>
+    <div id="quiz-container">
+        <p id="question-text"></p>
+        <div style="text-align: center;">
+    <button id="fifty-fifty-btn" class="help-button" onclick="useFiftyFifty()">50/50</button>
+    <button id="show-one-wrong-btn" class="help-button" onclick="showOneWrong()">-1</button>
+            <button id="reveal-first-letter-btn" class="help-button" onclick="revealFirstLetter()">A</button>
+</div>
+        <ul id="answers"></ul>
+    </div>
+    <div id="message" style="display: none;"></div>
+
+   <script>
+    let currentQuestion = null;
+    let timerInterval = null;
+    let remainingTime = 60;  // Global variable to track remaining time
+    let fiftyFiftyUsed = false;  // Track if 50/50 has been used
+    let showOneWrongUsed = false;  // Track if "Show One Wrong Answer" has been used
+    let revealFirstLetterUsed = false;  // Track if "Reveal First Letter" has been used
+
+
+    function loadQuestion() {
+        $('#result-message').remove();  // Remove the previous result message
+        $('#answers').empty();  // Clear the answers section
+        clearTimer();  // Clear any existing timer
+
+        $.get('/get_question', function (data) {
+            if (data.message) {
+                $('#quiz-container').html(`
+                    <div id="quiz-completed-box" class="quiz-completed-box">
+                        <h2>${data.message}</h2>
+                        <p>Your score: ${data.score}</p>
+                        <p>Correct Answers: ${data.correct_answers}/10</p>
+                        <button onclick="reloadQuiz()" class="btn-reload">Try Again</button>
+                        <button onclick="window.location.href='{{ url_for('menu') }}'" class="btn-reload">
+                            Try different quiz
+                        </button>
+                    </div>
+                `);
+            } else {
+                currentQuestion = data;
+                $('#question-text').text(data.question_text);
+                $('#answers').empty();
+
+                const answers = [data.correct_answer, ...data.wrong_answers];
+                if (Array.isArray(data.wrong_answers)) {
+                    answers.sort(() => Math.random() - 0.5);  // Shuffle the answers
+
+                    answers.forEach(answer => {
+                        $('#answers').append(`
+                            <div class="answer-item">
+                                <button class="answer-button" onclick="submitAnswer('${answer}')">${answer}</button>
+                            </div>
+                        `);
+                    });
+
+                    // Enable the buttons after the next question is loaded
+                    $('#answers').find('.answer-button').prop('disabled', false);
+                } else {
+                    console.error('Wrong answers are not in an array format:', data.wrong_answers);
+                }
+
+                // Start the bonus timer
+                startBonusTimer();
+            }
+        });
+    }
+
+    function useFiftyFifty() {
+        if (fiftyFiftyUsed || !currentQuestion) return;  // Prevent multiple uses or if no question is loaded
+        fiftyFiftyUsed = true;
+
+        // Disable the 50/50 button after use
+        $('#fifty-fifty-btn').prop('disabled', true);
+
+        // Filter out two incorrect answers
+        const wrongAnswers = currentQuestion.wrong_answers;
+        const answersToDisable = wrongAnswers.slice(0, 2);  // Select two wrong answers
+
+        // Disable the corresponding buttons
+        $('#answers').children().each(function () {
+            const button = $(this).find('.answer-button');
+            if (answersToDisable.includes(button.text())) {
+                button.prop('disabled', true).css('opacity', 0.5);  // Disable and style the button
+            }
+        });
+    }
+
+    function showOneWrong() {
+        if (showOneWrongUsed || !currentQuestion) return;  // Prevent multiple uses or if no question is loaded
+        showOneWrongUsed = true;
+
+        // Disable the "Show One Wrong Answer" button after use
+        $('#show-one-wrong-btn').prop('disabled', true);
+
+        // Randomly select one wrong answer to disable
+        const wrongAnswers = currentQuestion.wrong_answers;
+        const randomWrongAnswer = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+
+        // Disable the corresponding button
+        $('#answers').children().each(function () {
+            const button = $(this).find('.answer-button');
+            if (button.text() === randomWrongAnswer) {
+                button.prop('disabled', true).css('opacity', 0.5);  // Disable and style the button
+            }
+        });
+    }
+
+    function revealFirstLetter() {
+    if (revealFirstLetterUsed || !currentQuestion) return; // Prevent multiple uses or if no question is loaded
+    revealFirstLetterUsed = true;
+
+    // Disable the "Reveal First Letter" button after use
+    $('#reveal-first-letter-btn').prop('disabled', true);
+
+    // Get the first letter of the correct answer
+    const correctAnswer = currentQuestion.correct_answer;
+    const firstLetter = correctAnswer.charAt(0).toUpperCase(); // Use uppercase for consistent comparison
+
+    // Iterate over all answer buttons
+    $('#answers').children().each(function () {
+        const button = $(this).find('.answer-button');
+        const answerText = button.text();
+        if (answerText.charAt(0).toUpperCase() === firstLetter) {
+            // Update the button text to style the matching first letter
+            button.html(
+                `<span style="color: #2a2a2a; font-weight: bold;">${firstLetter}</span>${answerText.slice(1)}`
+            );
+        }
+    });
+}
+
+    function submitAnswer(answer) {
+        // Disable all answer buttons to prevent multiple clicks
+        $('#answers').find('.answer-button').prop('disabled', true);
+        clearTimer();  // Stop the bonus timer
+
+        $.ajax({
+            url: '/submit_answer',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                question_id: currentQuestion.id,
+                selected_answer: answer,
+                remaining_time: remainingTime  // Send the remaining time
+            }),
+            success: function (data) {
+                const isCorrect = data.is_correct;  // Check if the answer is correct
+                const questionScore = data.question_score;
+                const bonusPoints = data.bonus_points || 0;  // Bonus points received
+
+                const message = isCorrect
+                    ? `<p>Correct Answer! +${questionScore}</p><p>Time Bonus: +${bonusPoints}</p>`
+                    : '<p>Wrong Answer! +0</p>';
+
+                // Change button color based on the answer
+                $('#answers').children().each(function () {
+                    const button = $(this).find('.answer-button');
+                    const buttonText = button.text();
+
+                    if (buttonText === currentQuestion.correct_answer) {
+                        button.css('background-color', 'green');  // Green for correct answer
+                    } else if (buttonText === answer && !isCorrect) {
+                        button.css('background-color', 'red');  // Red for wrong answer
+                    }
+                });
+
+                $('#score').text(`Score: ${data.score}`);
+
+                // Create result message and "Next Question" button
+                let resultMessageClass = isCorrect ? 'correct-answer-message' : 'wrong-answer-message';
+                $('#quiz-container').append(`
+                    <div id="result-message" class="${resultMessageClass}">
+                        ${message}
+                        <button id="next-question-btn" onclick="loadQuestion()" class="btn-next-question">Next Question</button>
+                    </div>
+                `);
+
+                // Hide the "Next Question" button and result message after click
+                $('#next-question-btn').on('click', function () {
+                    $(this).hide();  // Hide the "Next Question" button
+                    $('#result-message').fadeOut(500, function() {  // Fade out the result message
+                        $(this).remove();  // Remove the result message from the DOM
+                        loadQuestion();  // Load next question
+                    });
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error:', status, error);
+            }
+        });
+    }
+
+    function reloadQuiz() {
+        window.location.reload();  // Reload the page to restart the quiz
+    }
+
+    function startBonusTimer() {
+        remainingTime = 60;  // Reset timer to 60 seconds
+        const timerBar = $('<div id="timer-bar"></div>').css({
+            height: '30px',
+            width: '100%',
+            backgroundColor: '#ffd726',
+            transition: 'width 1s linear',
+            marginTop: '10px',
+            borderRadius: '5px'
+        });
+        const bonusText = $('<div id="bonus-text" class="bonus_points bangers-nav">Bonus Points</div>')
+
+        $('#quiz-container').append(timerBar).append(bonusText);
+
+        timerInterval = setInterval(() => {
+            remainingTime -= 1;
+            timerBar.css('width', `${(remainingTime / 60) * 100}%`);
+
+            if (remainingTime <= 0) {
+                clearTimer();
+            }
+        }, 1000);
+    }
+
+    function clearTimer() {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+        $('#timer-bar').remove();  // Remove the timer bar from the DOM
+        $('#bonus-text').remove(); // Remove the bonus text from the DOM
+    }
+
+    $(document).ready(function () {
+        loadQuestion();
+    });
+</script>
+
+
+{% endblock %}

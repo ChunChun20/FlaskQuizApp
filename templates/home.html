@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+      <div class="button-container">
+    <img src="{{ url_for('static', filename='baner_no_bg.png') }}" alt="Flask Quiz Game" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;">
+
+    <a href="{{ url_for('login') }}" class="btn btn-primary btn-block custom-btn mb-2">Login</a>
+    <a href="{{ url_for('register') }}" class="btn btn-success btn-block custom-btn">Register</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}Menu{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert alert-{{ messages[0][0] }} alert-dismissible fade show" role="alert">
+                        {{ messages[0][1] }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+
+<nav class="navbar navbar-light">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <a href="{{ url_for('scoreboard') }}" class="btn btn-success bangers-button logout-button">
+                Scoreboard
+            </a>
+
+
+        <div class="d-flex align-items-center">
+            <span class="navbar-text me-3 bangers">
+                {{ current_user.username }}
+            </span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger bangers-button logout-button">
+                Logout
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+    <header>
+
+        <h1 class="text-center my-4 quiz-title">Welcome to the Quiz</h1>
+    </header>
+
+     <main>
+        <div class="d-flex justify-content-center">
+            <form method="POST" action="{{ url_for('menu') }}" class="styled-form">
+                {{ form.hidden_tag() }}
+                <div class="form-group bangers">
+                    <h4>Category:</h4>
+                    {% for subfield in form.category %}
+                        <div class="form-check ms-3">
+                            {{ subfield(class="form-check-input", id=subfield.id) }}
+                            <label class="form-check-label" for="{{ subfield.id }}">{{ subfield.label }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="form-group bangers">
+                    <h4>Difficulty:</h4>
+                    {% for subfield in form.difficulty %}
+                        <div class="form-check ms-3">
+                            {{ subfield(class="form-check-input", id=subfield.id) }}
+                            <label class="form-check-label" for="{{ subfield.id }}">{{ subfield.label }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Start Quiz</button>
+            </form>
+        </div>
+    </main>
+    </div>
+<div class="d-flex justify-content-center my-1">
+        <div class="rules-container">
+            <h4 class="text-center">How to play:</h4>
+            <ul>
+                <li>The quiz contains multiple-choice questions.</li>
+                <li>Each question has one correct answer.</li>
+                <li>You have access to 3 help options. Each can be used only once per game.</li>
+                <li>Harder questions give more points.</li>
+                <li>You will have a limited time to answer and get bonus points on each question.</li>
+                <li>Once you submit your answer, you cannot change it.</li>
+                <li>Good luck and have fun!</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

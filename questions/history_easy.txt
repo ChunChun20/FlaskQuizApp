@@ -1,0 +1,98 @@
+question1 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="Who was the first President of the United States?",
+            correct_answer="George Washington"
+        )
+        question1.set_wrong_answers(["Thomas Jefferson", "Abraham Lincoln", "John Adams"])
+        db.session.add(question1)
+
+        question2 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="In what year did the Titanic sink?",
+            correct_answer="1912"
+        )
+        question2.set_wrong_answers(["1905", "1920", "1898"])
+        db.session.add(question2)
+
+        question3 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="What ancient civilization built the pyramids?",
+            correct_answer="Egyptians"
+        )
+        question3.set_wrong_answers(["Mayans", "Romans", "Chinese"])
+        db.session.add(question3)
+
+        question4 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="Who was the first man to step on the moon?",
+            correct_answer="Neil Armstrong"
+        )
+        question4.set_wrong_answers(["Buzz Aldrin", "Yuri Gagarin", "Michael Collins"])
+        db.session.add(question4)
+
+        question5 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="What was the name of the ship that carried the Pilgrims to America in 1620?",
+            correct_answer="Mayflower"
+        )
+        question5.set_wrong_answers(["Santa Maria", "Pinta", "Endeavour"])
+        db.session.add(question5)
+
+        question6 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="Which war was fought between the North and South regions in the United States?",
+            correct_answer="Civil War"
+        )
+        question6.set_wrong_answers(["Revolutionary War", "World War I", "War of 1812"])
+        db.session.add(question6)
+
+        question7 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="What wall was torn down in 1989, symbolizing the end of the Cold War?",
+            correct_answer="Berlin Wall"
+        )
+        question7.set_wrong_answers(["Great Wall of China", "Iron Curtain", "Hadrian's Wall"])
+        db.session.add(question7)
+
+        question8 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="Who was the leader of the Soviet Union during World War II?",
+            correct_answer="Joseph Stalin"
+        )
+        question8.set_wrong_answers(["Vladimir Lenin", "Nikita Khrushchev", "Mikhail Gorbachev"])
+        db.session.add(question8)
+
+        question9 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="What year did World War II end?",
+            correct_answer="1945"
+        )
+        question9.set_wrong_answers(["1939", "1940", "1950"])
+        db.session.add(question9)
+
+        question10 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="Who was the British Prime Minister during most of World War II?",
+            correct_answer="Winston Churchill"
+        )
+        question10.set_wrong_answers(["Neville Chamberlain", "Clement Attlee", "Margaret Thatcher"])
+        db.session.add(question10)
+
+        question11 = Questions(
+            category="History",
+            difficulty="Easy",
+            question_text="What empire was ruled by Julius Caesar?",
+            correct_answer="Roman Empire"
+        )
+        question11.set_wrong_answers(["Greek Empire", "Ottoman Empire", "Persian Empire"])
+        db.session.add(question11)

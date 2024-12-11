@@ -1,0 +1,97 @@
+question1 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="Which treaty ended World War I?",
+            correct_answer="Treaty of Versailles"
+        )
+        question1.set_wrong_answers(["Treaty of Paris", "Treaty of Ghent", "Treaty of Vienna"])
+
+
+        question2 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="Who was the first Emperor of Rome?",
+            correct_answer="Augustus"
+        )
+        question2.set_wrong_answers(["Julius Caesar", "Nero", "Tiberius"])
+
+
+        question3 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What year did the Berlin Wall go up?",
+            correct_answer="1961"
+        )
+        question3.set_wrong_answers(["1949", "1955", "1973"])
+
+
+        question4 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What was the name of the ship Charles Darwin sailed on during his scientific voyage?",
+            correct_answer="HMS Beagle"
+        )
+        question4.set_wrong_answers(["HMS Endeavour", "HMS Victory", "HMS Resolution"])
+
+
+        question5 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="Which famous battle took place in 1066?",
+            correct_answer="Battle of Hastings"
+        )
+        question5.set_wrong_answers(["Battle of Agincourt", "Battle of Bannockburn", "Battle of Bosworth"])
+
+
+        question6 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What civilization is known for creating the first written code of laws?",
+            correct_answer="Babylonians"
+        )
+        question6.set_wrong_answers(["Sumerians", "Egyptians", "Hittites"])
+
+
+        question7 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="Who was the President of the United States during the Louisiana Purchase?",
+            correct_answer="Thomas Jefferson"
+        )
+        question7.set_wrong_answers(["James Madison", "John Adams", "Andrew Jackson"])
+
+
+        question8 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="Who was the last monarch of the Kingdom of Hawaii?",
+            correct_answer="Queen Liliʻuokalani"
+        )
+        question8.set_wrong_answers(["King Kamehameha", "Queen Kaʻahumanu", "King Kalākaua"])
+
+
+        question9 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What was the name of the program that developed the atomic bomb during World War II?",
+            correct_answer="Manhattan Project"
+        )
+        question9.set_wrong_answers(["Trinity Project", "Apollo Project", "Arsenal Program"])
+
+
+        question10 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What year did the American Civil War begin?",
+            correct_answer="1861"
+        )
+        question10.set_wrong_answers(["1855", "1865", "1870"])
+
+
+        question11 = Questions(
+            category="History",
+            difficulty="Normal",
+            question_text="What was the name of the first permanent English settlement in America?",
+            correct_answer="Jamestown"
+        )
+        question11.set_wrong_answers(["Plymouth", "Roanoke", "Salem"])

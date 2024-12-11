@@ -1,0 +1,98 @@
+question1 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Who wrote the novel '1984'?",
+    correct_answer="George Orwell"
+)
+question1.set_wrong_answers(["Aldous Huxley", "Ray Bradbury", "Philip K. Dick"])
+db.session.add(question1)
+
+question2 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="In which novel does the character 'Atticus Finch' appear?",
+    correct_answer="To Kill a Mockingbird"
+)
+question2.set_wrong_answers(["The Great Gatsby", "Of Mice and Men", "The Grapes of Wrath"])
+db.session.add(question2)
+
+question3 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="What is the name of the wizarding school in the 'Harry Potter' series?",
+    correct_answer="Hogwarts"
+)
+question3.set_wrong_answers(["Beauxbatons", "Durmstrang", "Ilvermorny"])
+db.session.add(question3)
+
+question4 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Who wrote 'The Catcher in the Rye'?",
+    correct_answer="J.D. Salinger"
+)
+question4.set_wrong_answers(["F. Scott Fitzgerald", "Ernest Hemingway", "Mark Twain"])
+db.session.add(question4)
+
+question5 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="What is the name of the green knight in the Arthurian legend?",
+    correct_answer="Sir Gawain"
+)
+question5.set_wrong_answers(["Sir Lancelot", "Sir Galahad", "Sir Percival"])
+db.session.add(question5)
+
+question6 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Who wrote 'The Odyssey'?",
+    correct_answer="Homer"
+)
+question6.set_wrong_answers(["Virgil", "Sophocles", "Aristotle"])
+db.session.add(question6)
+
+question7 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Which novel by Mary Shelley tells the story of a scientist who creates a monster?",
+    correct_answer="Frankenstein"
+)
+question7.set_wrong_answers(["Dracula", "The Strange Case of Dr. Jekyll and Mr. Hyde", "The Picture of Dorian Gray"])
+db.session.add(question7)
+
+question8 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="In which book would you find the characters Frodo Baggins and Samwise Gamgee?",
+    correct_answer="The Lord of the Rings"
+)
+question8.set_wrong_answers(["The Hobbit", "Harry Potter", "The Chronicles of Narnia"])
+db.session.add(question8)
+
+question9 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="What is the title of the first book in George R.R. Martin's 'A Song of Ice and Fire' series?",
+    correct_answer="A Game of Thrones"
+)
+question9.set_wrong_answers(["A Clash of Kings", "A Storm of Swords", "A Dance with Dragons"])
+db.session.add(question9)
+
+question10 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Who wrote 'The Picture of Dorian Gray'?",
+    correct_answer="Oscar Wilde"
+)
+question10.set_wrong_answers(["James Joyce", "Virginia Woolf", "Charles Dickens"])
+db.session.add(question10)
+
+question11 = Questions(
+    category="Literature",
+    difficulty="Normal",
+    question_text="Which novel features the character 'Hannibal Lecter'?",
+    correct_answer="The Silence of the Lambs"
+)
+question11.set_wrong_answers(["Red Dragon", "The Godfather", "Pride and Prejudice"])
+db.session.add(question11)
