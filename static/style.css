@@ -49,7 +49,7 @@ h3, .quiz-title {
      align-items: center;
      font-family: 'Bangers', cursive;
      font-size: 2.5rem;
-     color: #white;
+     color: white;
     }
 
 .logout-button:hover {
